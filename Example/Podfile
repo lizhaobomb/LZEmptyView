@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'LZEmptyView_Example' do
+  pod 'LZEmptyView', :path => '../'
+
+  target 'LZEmptyView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
