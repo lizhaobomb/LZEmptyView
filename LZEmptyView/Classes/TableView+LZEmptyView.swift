@@ -15,7 +15,7 @@ public protocol LZEmptyTableViewDelegate:NSObjectProtocol {
 private var kEmptyDelegateKey: Void?
 private var kEmptyViewKey: Void?
 
-extension UITableView {
+public extension UITableView {
     var emptyView: UIView? {
         get {
             return objc_getAssociatedObject(self, &kEmptyViewKey) as? UIView
@@ -27,7 +27,7 @@ extension UITableView {
         }
     }
     
-    var emptyViewDelegate:LZEmptyTableViewDelegate? {
+   public var emptyViewDelegate:LZEmptyTableViewDelegate? {
         get {
             return objc_getAssociatedObject(self,&kEmptyDelegateKey) as? LZEmptyTableViewDelegate
         }
@@ -39,7 +39,7 @@ extension UITableView {
     }
     
     
-    func lz_reloadData(){
+   public func lz_reloadData(){
         self.reloadData()
         var isEmpty = true
         
