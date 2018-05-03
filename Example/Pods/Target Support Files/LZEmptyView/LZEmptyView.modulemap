@@ -1,0 +1,6 @@
+framework module LZEmptyView {
+  umbrella header "LZEmptyView-umbrella.h"
+
+  export *
+  module * { export * }
+}

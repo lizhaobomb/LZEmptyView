@@ -1,0 +1,16 @@
+PODS:
+  - LZEmptyView (0.1.0)
+
+DEPENDENCIES:
+  - LZEmptyView (from `../`)
+
+EXTERNAL SOURCES:
+  LZEmptyView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LZEmptyView: f9645832e54fd2ab68aca6b5b341f5f83a76b8f8
+
+PODFILE CHECKSUM: 5e5d9e6b82a00154080aa40d7c23902b26801bb1
+
+COCOAPODS: 1.5.0
