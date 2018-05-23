@@ -30,13 +30,34 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @objc func refreshData() {
+        data = [1,2,3,4,5,6,7,8,9]
+        tableview.lz_reloadData()
+    }
+
 
 }
 
 extension ViewController:LZEmptyTableViewDelegate,UITableViewDelegate, UITableViewDataSource {
+    
     func makeEmptyView() -> UIView {
-        let emptyView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
-        emptyView.backgroundColor = UIColor.green
+        let emptyView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableview.frame.size.width, height: self.tableview.frame.size.height))
+        let label = UILabel()
+        label.text = "暂无数据"
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textAlignment = .center
+        emptyView.addSubview(label)
+        label.frame = CGRect(x: 0, y: 0, width: emptyView.frame.size.width, height: 15)
+        label.center = emptyView.center
+        
+        let button = UIButton(type: .custom)
+        button.setTitle("点击刷新", for: .normal)
+        button.frame = CGRect(x: emptyView.frame.size.width/2-50, y: label.frame.maxY + 10, width: 100, height: 50)
+        button.addTarget(self, action: #selector(refreshData), for: .touchUpInside)
+        emptyView.addSubview(button)
+    
+        emptyView.backgroundColor = UIColor(red: CGFloat(arc4random()%256)/255.0, green: CGFloat(arc4random()%256)/255.0, blue: CGFloat(arc4random()%256)/255.0, alpha: 1.0)
         return emptyView
     }
     

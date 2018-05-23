@@ -55,6 +55,7 @@ public extension UITableView {
             let rows = src?.tableView(self, numberOfRowsInSection: i)
             if rows! > 0 {
                 isEmpty = false
+                break
             }
         }
         
